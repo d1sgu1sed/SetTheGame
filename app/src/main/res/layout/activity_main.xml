@@ -61,9 +61,9 @@
                             android:layout_height="wrap_content"
                             android:textSize="12pt"
                             android:background="#363189"
-                            android:hint="никнейм"
+                            android:hint="НИКНЕЙМ"
                             android:padding="3dp"
-                            android:textColorHint="@color/white"
+                            android:textColorHint="@color/grey"
                             android:layout_margin="10dp"
                             android:textColor="@color/white"/>
                     <EditText
@@ -72,8 +72,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="12pt"
                             android:background="#363189"
-                            android:textColorHint="@color/white"
-                            android:hint="пароль"
+                            android:textColorHint="@color/grey"
+                            android:hint="ПАРОЛЬ"
                             android:padding="3dp"
                             android:layout_margin="10dp"
                             android:textColor="@color/white"/>
