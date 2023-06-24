@@ -17,9 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Controller controller = new Controller();
         try {
             controller.register("Andrey", "strongpassword1337");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
     }
