@@ -61,17 +61,20 @@
                             android:layout_height="wrap_content"
                             android:textSize="12pt"
                             android:background="#363189"
-                            android:hint="НИКНЕЙМ"
+                            android:hint="никнейм"
+                            android:padding="3dp"
                             android:textColorHint="@color/white"
                             android:layout_margin="10dp"
                             android:textColor="@color/white"/>
                     <EditText
+                            android:inputType="textPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="12pt"
                             android:background="#363189"
                             android:textColorHint="@color/white"
-                            android:hint="ПАРОЛЬ"
+                            android:hint="пароль"
+                            android:padding="3dp"
                             android:layout_margin="10dp"
                             android:textColor="@color/white"/>
 
