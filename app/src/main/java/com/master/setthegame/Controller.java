@@ -22,7 +22,6 @@ public class Controller {
 
     public Controller() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-
         StrictMode.setThreadPolicy(policy);
     }
 
@@ -91,7 +90,7 @@ public class Controller {
 
     }
 
-    public int createGame() throws IOException, JSONException {
+    public Long createGame() throws IOException {
         URL url = new URL("http://51.250.45.188:8080/set/room/create");
         //Настройка запроса
         HttpURLConnection con = setConnSettings(url);
@@ -100,7 +99,7 @@ public class Controller {
         sendRequest(jsonInputString, con);
         //Принятие запроса
         JSONObject json = getResponse(con);
-        return (int) json.get("gameId");
+        return (Long) json.get("gameId");
     }
 
     public boolean EnterInGame(int gameId) throws IOException, JSONException {
