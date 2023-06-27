@@ -57,6 +57,7 @@
                     android:orientation="vertical">
 
                         <EditText
+                            android:id="@+id/nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="12pt"
@@ -67,6 +68,7 @@
                             android:layout_margin="10dp"
                             android:textColor="@color/white"/>
                     <EditText
+                            android:id="@+id/password"
                             android:inputType="textPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -155,7 +157,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="30dp"
-            android:id="@+id/exutBut"/>
+            android:id="@+id/exitBut"/>
 
     </RelativeLayout>
 
