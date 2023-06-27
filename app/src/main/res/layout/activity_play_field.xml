@@ -12,13 +12,33 @@
         android:orientation="vertical"
         android:background="@drawable/gradient">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            
+            <ImageView
+                android:layout_width="105dp"
+                android:layout_height="39dp"
+                android:layout_margin="11dp"
+                android:background="@drawable/returnbut"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="155dp"
+                android:layout_height="46.4dp"
+                android:layout_margin="11dp"
+                android:background="@drawable/scores"
+                android:gravity="right" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="НАЙДИТЕ ВЕРНОЕ СОЧЕТАНИЕ"
             android:textSize="24dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginHorizontal="30dp"
+            android:gravity="center"
             android:textStyle="bold"
             android:textColor="@color/white"/>
 
@@ -33,86 +53,215 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"
+                    android:visibility="gone"/>
+
                 <ImageView
                     android:layout_width="100dp"
-                    android:layout_height="130dp"
-                    android:background="@drawable/c1331"
-                    android:layout_margin="10dp"
-                    android:elevation="50dp" />
-                <View
-                    android:layout_width="103dp"
-                    android:layout_height="103dp"
-                    android:background="card"/>
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/c1331" />
             </RelativeLayout>
 
-<!--            <ImageView-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:background="@drawable/c1331"-->
-<!--                android:layout_margin="10dp"-->
-<!--                android:elevation="50dp" />-->
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="130dp"
-                android:background="@drawable/c1111"
-                android:layout_margin="10dp"/>
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/c1212"
-                android:layout_margin="10dp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1111"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1212"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c2222"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c3333"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
-            <View
-                android:layout_width="100dp"
-                android:layout_height="130dp"
-                android:background="@drawable/c2222"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/c3333"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/c1231"
-                android:layout_margin="10dp" />
-            <View
-                android:layout_width="100dp"
-                android:layout_height="130dp"
-                android:background="@drawable/c2223"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="130dp"
-                android:background="@drawable/c3332"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/c1222"
-                android:layout_margin="10dp" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1231"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
-            <View
-                android:layout_width="100dp"
-                android:layout_height="130dp"
-                android:background="@drawable/cards"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/cards"
-                android:layout_margin="10dp"/>
-            <View
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/cards"
-                android:layout_margin="10dp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c2223"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c3332"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1222"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1331"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1331"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cards"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c1331"
+                    android:layout_margin="10dp" />
+            </RelativeLayout>
 
         </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center|bottom">
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="51dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/addmore" />
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_height="51dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rules"/>
+        </LinearLayout>
 
     </LinearLayout>
 
