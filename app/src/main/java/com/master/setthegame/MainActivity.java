@@ -38,20 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 String password = passwordView.getText().toString();
                 if(!nickname.replaceAll(" ", "").equals("") &&
                         !password.replaceAll(" ", "").equals("")){
-                    try {
                         boolean req = controller.register(nickname, password);
                         if (!req)
                             showErrorMessage("Введеные неверные логин или пароль!");
-                        //TODO: Переход на активность игры
-                        /*else{
-                            Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                        else{
+                            Intent intent = new Intent(MainActivity.this, PlayField.class);
                             String token = controller.getToken();
+                            String name = controller.getName();
                             intent.putExtra("token", token);
+                            intent.putExtra("name", name);
                             startActivity(intent);
-                        }*/
-                    } catch (IOException | JSONException e) {
-                        showErrorMessage("Ошибка работы сервера!");
-                    }
+                        }
 
                 }
                 else{

@@ -1,6 +1,7 @@
 package com.master.setthegame;
 
 import android.os.StrictMode;
+import android.util.Log;
 
 import org.json.simple.JSONArray;
 import org.json.JSONException;
@@ -12,11 +13,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 
 public class Controller {
+
     private String token;
     private String name;
 
@@ -60,10 +63,20 @@ public class Controller {
         }
     }
 
-    public boolean register(String nick, String pass) throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/user/register");
+    public boolean register(String nick, String pass) {
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/user/register");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"nickname\": \"" + nick + "\", \"password\": \"" + pass + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -77,10 +90,20 @@ public class Controller {
         return false;
     }
 
-    public JSONArray playerGames() throws IOException, JSONException {
-        URL url = new URL("https://51.250.45.188:8080/set/room/list");
+    public JSONArray playerGames() {
+        URL url = null;
+        try {
+            url = new URL("https://51.250.45.188:8080/set/room/list");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -90,10 +113,20 @@ public class Controller {
 
     }
 
-    public Long createGame() throws IOException {
-        URL url = new URL("http://51.250.45.188:8080/set/room/create");
+    public Long createGame(){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/room/create");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -102,10 +135,20 @@ public class Controller {
         return (Long) json.get("gameId");
     }
 
-    public boolean EnterInGame(int gameId) throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/set/room/enter");
+    public boolean enterInGame(int gameId){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/room/enter");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\", \"gameId\":" + gameId + "}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -114,10 +157,20 @@ public class Controller {
         return (boolean) json.get("success");
     }
 
-    public JSONArray getField() throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/set/field");
+    public JSONArray getField(){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/field");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -126,23 +179,46 @@ public class Controller {
         return (JSONArray) json.get("cards");
     }
 
-    public int pickCards(int[] pickedCards) throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/set/field");
+    public boolean pickCards(int[] pickedCards) {
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/pick");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\", \"cards\":[" +
                 pickedCards[0] + ", " +pickedCards[1]+ ", "+ pickedCards[2]+"]}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
         //Принятие запроса
         JSONObject json = getResponse(con);
-        return (int) json.get("score");
+        Log.e("PickedRes", String.valueOf(json.get("isSet")));
+        if(!(boolean)json.get("success"))
+            return false;
+        return (boolean) json.get("isSet");
     }
 
-    public boolean addCards() throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/set/add");
+    public boolean addCards(){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/add");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
@@ -151,20 +227,40 @@ public class Controller {
         return (boolean) json.get("success");
     }
 
-    public int getCurrentScore() throws IOException, JSONException {
-        URL url = new URL("http://51.250.45.188:8080/set/scores");
+    public int getCurrentScore(){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/scores");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         //Настройка запроса
-        HttpURLConnection con = setConnSettings(url);
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
         //Отправка запроса
         sendRequest(jsonInputString, con);
         //Принятие запроса
         JSONObject json = getResponse(con);
         JSONArray users = (JSONArray) json.get("users");
-        return users.indexOf(name);
+        JSONObject user = (JSONObject) users.get(0);
+        return Math.toIntExact((Long) user.get("score"));
     }
 
     public String getToken() {
         return token;
+    }
+    public void setToken(String token) {
+        this.token = token;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 }
