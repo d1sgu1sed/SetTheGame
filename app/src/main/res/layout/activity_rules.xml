@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Rules">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="105dp"
+                android:layout_height="39dp"
+                android:layout_margin="11dp"
+                android:background="@drawable/returnbut"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
+
+            <TextView
+                android:id="@+id/ruleName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ПРАВИЛА ИГРЫ"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/rules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rule1"
+                android:layout_below="@id/ruleName"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/setExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ПРИМЕР СЕТА"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textAlignment="center"
+                android:layout_below="@id/rules"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/setExample">
+                
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:src="@drawable/example1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:src="@drawable/example2" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rule2"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+                
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
