@@ -12,10 +12,9 @@
         android:orientation="vertical"
         android:background="@drawable/gradient">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
             
             <ImageView
                 android:id="@+id/returnButton"
@@ -23,20 +22,18 @@
                 android:layout_height="39dp"
                 android:layout_margin="11dp"
                 android:background="@drawable/returnbut"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center|start"/>
 
             <TextView
                 android:id="@+id/score"
                 android:layout_width="155dp"
                 android:layout_height="46.4dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="100dp"
-                android:gravity="center"
+                android:layout_gravity="center|end"
                 android:textColor="@color/white"
                 android:textSize="8pt"
                 android:background="@drawable/scores"
                 />
-        </LinearLayout>
+        </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -57,244 +54,263 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard1"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
-                    android:visibility="invisible"
-                    />
+                    android:visibility="invisible"/>
 
                 <ImageView
                     android:id="@+id/card1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/c1331" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c1331"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard2"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
 
                 <ImageView
                     android:id="@+id/card2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/c1111" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c1111"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard3"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c1212"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard4"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
 
                 <ImageView
                     android:id="@+id/card4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/c2222" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c2222"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard5"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c3333"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard6"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c1231"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard7"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c2223"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard8"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c3332"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
                 <View
                     android:id="@+id/activeCard9"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card9"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
                     android:background="@drawable/c1222"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
+            <FrameLayout
                 android:id="@+id/addCard1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:visibility="invisible">
                 <View
                     android:id="@+id/activeCard10"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
 
                 <ImageView
                     android:id="@+id/card10"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/c1331" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c1222"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
+            <FrameLayout
                 android:id="@+id/addCard2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:visibility="invisible">
                 <View
                     android:id="@+id/activeCard11"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card11"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/c1331"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c1222"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
-            <RelativeLayout
+            <FrameLayout
                 android:id="@+id/addCard3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
                 android:visibility="invisible">
                 <View
                     android:id="@+id/activeCard12"
-                    android:layout_width="100dp"
+                    android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/cards"
                     android:visibility="invisible"/>
+
                 <ImageView
                     android:id="@+id/card12"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/c1331"
-                    android:layout_margin="10dp" />
-            </RelativeLayout>
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:background="@drawable/c1222"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"/>
+            </FrameLayout>
 
         </GridLayout>
 
