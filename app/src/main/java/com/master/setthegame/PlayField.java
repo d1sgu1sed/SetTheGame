@@ -10,6 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -41,9 +43,9 @@ public class PlayField extends AppCompatActivity {
         TextView score = findViewById(R.id.score);
         int[] flagArray = new int[12];
 
-        RelativeLayout addCard1 = findViewById(R.id.addCard1);
-        RelativeLayout addCard2 = findViewById(R.id.addCard2);
-        RelativeLayout addCard3 = findViewById(R.id.addCard3);
+        FrameLayout addCard1 = findViewById(R.id.addCard1);
+        FrameLayout addCard2 = findViewById(R.id.addCard2);
+        FrameLayout addCard3 = findViewById(R.id.addCard3);
 
         ImageView card1 = findViewById(R.id.card1);
         ImageView card2 = findViewById(R.id.card2);
@@ -100,7 +102,7 @@ public class PlayField extends AppCompatActivity {
 
         id = controller.createGame();
         controller.enterInGame(Math.toIntExact(id));
-        final JSONArray[] fieldArr = {controller.getField()};
+        final JSONArray[] fieldArr = {(JSONArray) controller.getField().get("cards")};
         showField(imageList, fieldArr[0]);
 
         View.OnClickListener onCardClick = new View.OnClickListener() {
@@ -130,7 +132,14 @@ public class PlayField extends AppCompatActivity {
                             }
                         }
                             if(controller.pickCards(pickIds)){
-                                fieldArr[0] = controller.getField();
+                                JSONObject resultOfPick = (JSONObject) controller.getField();
+                                if(resultOfPick.get("status") == "ended"){
+                                    Intent intent = new Intent(PlayField.this, LeaderBoard.class);
+                                    intent.putExtra("token", getIntent().getStringExtra("token"));
+                                    intent.putExtra("name", getIntent().getStringExtra("name"));
+                                    startActivity(intent);
+                                }
+                                fieldArr[0] = (JSONArray) resultOfPick.get("cards");
                                 showField(imageList, fieldArr[0]);
                                 score.setText(String.valueOf(controller.getCurrentScore()));
                             }else
@@ -164,6 +173,13 @@ public class PlayField extends AppCompatActivity {
                 showField(imageList, fieldArr[0]);
             }
         });
+        showRules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayField.this, Rules.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public int getArraySum(int[] arr){
@@ -174,7 +190,9 @@ public class PlayField extends AppCompatActivity {
     }
 
     public void showField(ArrayList<ImageView> gameField, JSONArray field){
-        for(int i = 0; i < field.toArray().length; i++){
+        int fieldLen = field.toArray().length;
+        int i = 0;
+        for(; i < fieldLen; i++){
             JSONObject currCard = (JSONObject) field.get(i);
             String cardChars = Objects.requireNonNull(currCard.get("shape")).toString();
             cardChars = cardChars + Objects.requireNonNull(currCard.get("color")).toString();
@@ -185,6 +203,13 @@ public class PlayField extends AppCompatActivity {
             int resId = res.getIdentifier("c"+cardChars, "drawable", getPackageName());
             Log.e("cardId", "c"+cardChars);
             card.setBackgroundResource(resId);
+        }
+        if(fieldLen < 12){
+            for(int j = 11; j >= 9; j++)
+                gameField.get(j).setVisibility(View.INVISIBLE);
+        } else if (fieldLen < 9){
+            for(int j = 8; j >= 6; j++)
+                gameField.get(j).setVisibility(View.INVISIBLE);
         }
     }
 

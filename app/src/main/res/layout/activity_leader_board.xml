@@ -31,8 +31,11 @@
             android:layout_height="match_parent">
 
             <TableLayout
+                android:id="@+id/leaderBoard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="70dp"
+                android:paddingStart="40dp"
                 android:background="@drawable/table"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="75dp"

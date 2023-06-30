@@ -29,6 +29,7 @@
                 android:layout_width="155dp"
                 android:layout_height="46.4dp"
                 android:layout_gravity="center|end"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="8pt"
                 android:background="@drawable/scores"

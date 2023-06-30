@@ -60,9 +60,8 @@ public class MainActivity extends AppCompatActivity {
         rulesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Переход на активность правил
-                /*Intent intent = new Intent(MainActivity.this, RulesActivity.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(MainActivity.this, Rules.class);
+                startActivity(intent);
             }
         });
 

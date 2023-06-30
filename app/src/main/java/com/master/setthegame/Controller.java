@@ -2,6 +2,7 @@ package com.master.setthegame;
 
 import android.os.StrictMode;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.simple.JSONArray;
 import org.json.JSONException;
@@ -157,7 +158,7 @@ public class Controller {
         return (boolean) json.get("success");
     }
 
-    public JSONArray getField(){
+    public JSONObject getField(){
         URL url = null;
         try {
             url = new URL("http://51.250.45.188:8080/set/field");
@@ -176,7 +177,7 @@ public class Controller {
         sendRequest(jsonInputString, con);
         //Принятие запроса
         JSONObject json = getResponse(con);
-        return (JSONArray) json.get("cards");
+        return (JSONObject) json;
     }
 
     public boolean pickCards(int[] pickedCards) {
@@ -249,6 +250,28 @@ public class Controller {
         JSONArray users = (JSONArray) json.get("users");
         JSONObject user = (JSONObject) users.get(0);
         return Math.toIntExact((Long) user.get("score"));
+    }
+
+    public JSONArray getScores(){
+        URL url = null;
+        try {
+            url = new URL("http://51.250.45.188:8080/set/scores");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        //Настройка запроса
+        HttpURLConnection con = null;
+        try {
+            con = setConnSettings(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String jsonInputString = "{\"accessToken\": \"" + token + "\"}";
+        //Отправка запроса
+        sendRequest(jsonInputString, con);
+        //Принятие запроса
+        JSONObject json = getResponse(con);
+        return (JSONArray) json.get("users");
     }
 
     public String getToken() {
