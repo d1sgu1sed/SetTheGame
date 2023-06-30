@@ -205,14 +205,15 @@ public class PlayField extends AppCompatActivity {
             card.setBackgroundResource(resId);
         }
         if(fieldLen < 12){
-            for(int j = 11; j >= 9; j++)
-                gameField.get(j).setVisibility(View.INVISIBLE);
-        } else if (fieldLen < 9){
-            for(int j = 8; j >= 6; j++)
+            for(int j = 11; j >= 9; j--)
                 gameField.get(j).setVisibility(View.INVISIBLE);
         }
-        else if (fieldLen < 6){
-            for(int j = 5; j >= 3; j++)
+        if (fieldLen < 9){
+            for(int j = 8; j >= 6; j--)
+                gameField.get(j).setVisibility(View.INVISIBLE);
+        }
+        if (fieldLen < 6){
+            for(int j = 5; j >= 3; j--)
                 gameField.get(j).setVisibility(View.INVISIBLE);
         }
     }
