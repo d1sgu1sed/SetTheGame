@@ -211,6 +211,10 @@ public class PlayField extends AppCompatActivity {
             for(int j = 8; j >= 6; j++)
                 gameField.get(j).setVisibility(View.INVISIBLE);
         }
+        else if (fieldLen < 6){
+            for(int j = 5; j >= 3; j++)
+                gameField.get(j).setVisibility(View.INVISIBLE);
+        }
     }
 
     private void showErrorMessage(String message){
